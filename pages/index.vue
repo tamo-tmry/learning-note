@@ -1,10 +1,10 @@
 <template>
     <p>今日学んだことを書いてね</p>
-    <ol>
-        <li v-for="(talk) in talks">{{ talk.content }}</li>
-    </ol>
-    <textarea :disabled="isRequesting" v-model="learned" cols="30" rows="10"></textarea>
-    <input :disabled="isRequesting" type="button" value="登録" @click="register">
+    <VList>
+        <VListItem v-for="(talk) in talks">{{ talk.content }}</VListItem>
+    </VList>
+    <VTextarea :disabled="isRequesting" v-model="learned" rows="10" />
+    <VBtn :disabled="isRequesting" @click="register">登録</VBtn>
 </template>
 
 <script setup lang="ts">
