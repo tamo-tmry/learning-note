@@ -1,16 +1,14 @@
 <template>
     <p>今日学んだことを書いてね</p>
-    <VList>
-        <VListItem v-for="(talk) in talks">{{ talk.content }}</VListItem>
-    </VList>
+    <MessageContainer :messages="messages" />
     <VTextarea :disabled="isRequesting" v-model="learned" rows="10" />
     <VBtn :disabled="isRequesting" @click="register">登録</VBtn>
-    <Message label="hoge" />
 </template>
 
 <script setup lang="ts">
 import {ref} from '#imports'
 import OpenAI from 'openai'
+import { MessageType } from '~/types/Message'
 const learned = ref('')
 const isRequesting = ref(false)
 const runtimeConfig = useRuntimeConfig()
@@ -33,8 +31,13 @@ const register = async () => {
     isRequesting.value = false
 }
 
-const talks = computed(() => {
-    return talkList.value.filter((talk) => talk.role !== 'system')
+const messages = computed((): MessageType[] => {
+    return talkList.value.filter((talk) => talk.role !== 'system').map((talk) => {
+        return {
+            text: talk.content,
+            isMine: talk.role === 'user'
+        }
+    })
 })
 
 </script>
