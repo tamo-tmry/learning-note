@@ -5,6 +5,7 @@
     </VList>
     <VTextarea :disabled="isRequesting" v-model="learned" rows="10" />
     <VBtn :disabled="isRequesting" @click="register">登録</VBtn>
+    <Message label="hoge" />
 </template>
 
 <script setup lang="ts">
