@@ -1,41 +1,45 @@
 {
-  "name": "nuxt-app",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
-  "devDependencies": {
-    "@nuxt/devtools": "latest",
-    "@nuxtjs/eslint-config-typescript": "^12.1.0",
-    "@storybook/addon-essentials": "^7.4.2",
-    "@storybook/addon-interactions": "^7.4.2",
-    "@storybook/addon-links": "^7.4.2",
-    "@storybook/blocks": "^7.4.2",
-    "@storybook/testing-library": "^0.2.1",
-    "@storybook/vue3": "^7.4.2",
-    "@storybook/vue3-vite": "^7.4.2",
-    "@typescript-eslint/eslint-plugin": "^6.7.2",
-    "@typescript-eslint/parser": "^6.7.2",
-    "eslint": "^8.49.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-vue": "^9.17.0",
-    "nuxt": "^3.7.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "storybook": "^7.4.2",
-    "typescript": "^5.2.2"
-  },
-  "dependencies": {
-    "@mdi/font": "^7.2.96",
-    "openai": "^4.7.1",
-    "sass": "^1.67.0",
-    "vuetify": "^3.4.0-alpha.1"
-  }
+    "name": "nuxt-app",
+    "private": true,
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare",
+        "storybook": "storybook dev -p 6006",
+        "build-storybook": "storybook build"
+    },
+    "devDependencies": {
+        "@nuxt/devtools": "latest",
+        "@nuxtjs/eslint-config-typescript": "^12.1.0",
+        "@storybook/addon-essentials": "^7.4.2",
+        "@storybook/addon-interactions": "^7.4.2",
+        "@storybook/addon-links": "^7.4.2",
+        "@storybook/blocks": "^7.4.2",
+        "@storybook/testing-library": "^0.2.1",
+        "@storybook/vue3": "^7.4.2",
+        "@storybook/vue3-vite": "^7.4.2",
+        "@typescript-eslint/eslint-plugin": "^6.7.2",
+        "@typescript-eslint/parser": "^6.7.2",
+        "eslint": "^8.49.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-vue": "^9.17.0",
+        "nuxt": "^3.7.3",
+        "postcss-html": "^1.5.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "storybook": "^7.4.2",
+        "stylelint": "^15.10.3",
+        "stylelint-config-recess-order": "^4.3.0",
+        "stylelint-config-recommended-vue": "^1.5.0",
+        "stylelint-config-standard-scss": "^11.0.0",
+        "typescript": "^5.2.2"
+    },
+    "dependencies": {
+        "@mdi/font": "^7.2.96",
+        "openai": "^4.7.1",
+        "sass": "^1.67.0",
+        "vuetify": "^3.4.0-alpha.1"
+    }
 }
