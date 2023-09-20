@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@storybook/addon-essentials": "^7.4.2",
     "@storybook/addon-interactions": "^7.4.2",
     "@storybook/addon-links": "^7.4.2",
@@ -20,10 +21,16 @@
     "@storybook/testing-library": "^0.2.1",
     "@storybook/vue3": "^7.4.2",
     "@storybook/vue3-vite": "^7.4.2",
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-vue": "^9.17.0",
     "nuxt": "^3.7.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "storybook": "^7.4.2"
+    "storybook": "^7.4.2",
+    "typescript": "^5.2.2"
   },
   "dependencies": {
     "@mdi/font": "^7.2.96",
