@@ -12,14 +12,11 @@
 import { ref } from '#imports'
 import OpenAI from 'openai'
 import { MessageType } from '~/types/Message'
-const learned = ref('')
 const isRequesting = ref(false)
 const runtimeConfig = useRuntimeConfig()
 const talkList = ref<any[]>([
     { role: 'system', content: runtimeConfig.public.systemMessage },
 ])
-
-const MAX_REQUEST_COUNT = 3
 
 const openai = new OpenAI({
     apiKey: runtimeConfig.public.apiKey,
@@ -50,10 +47,6 @@ const messages = computed((): MessageType[] => {
 
 const hasTalk = computed(() => {
     return talkList.value.length > 1
-})
-
-const requestCount = computed(() => {
-    return talkList.value.filter((talk) => talk.role === 'user').length
 })
 
 const gotoCompletePage = () => {
