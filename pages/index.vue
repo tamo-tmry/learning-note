@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from '#imports'
+import { ref } from 'vue'
 import OpenAI from 'openai'
 import { MessageType } from '~/types/Message'
 const httpClient = useHttpClient()
