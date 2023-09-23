@@ -3,6 +3,7 @@
     <MessageContainer v-show="hasTalk" :messages="messages" />
     <MessageForm
         :isRequesting="isRequesting"
+        :hasTalk="!hasTalk"
         @register="register"
         @gotoCompletePage="gotoCompletePage"
     />
@@ -12,6 +13,7 @@
 import { ref } from '#imports'
 import OpenAI from 'openai'
 import { MessageType } from '~/types/Message'
+const httpClient = useHttpClient()
 const isRequesting = ref(false)
 const runtimeConfig = useRuntimeConfig()
 const talkList = ref<any[]>([
@@ -19,7 +21,7 @@ const talkList = ref<any[]>([
 ])
 
 const openai = new OpenAI({
-    apiKey: runtimeConfig.public.apiKey,
+    apiKey: runtimeConfig.public.openaiApiKey,
     dangerouslyAllowBrowser: true,
 })
 
@@ -49,7 +51,17 @@ const hasTalk = computed(() => {
     return talkList.value.length > 1
 })
 
-const gotoCompletePage = () => {
+const gotoCompletePage = async () => {
+    await registerTalkHistory()
     navigateTo('/complete')
+}
+
+const nonSystemTalkList = computed(() =>
+    talkList.value.filter((talk) => talk.role !== 'system'),
+)
+
+const registerTalkHistory = () => {
+    const requestBody = JSON.stringify(nonSystemTalkList.value)
+    httpClient.sendRequest(requestBody)
 }
 </script>
